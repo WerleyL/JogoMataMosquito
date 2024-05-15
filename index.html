@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        function iniciarJogo() {
+
+            var nivel = document.getElementById('selecionador').value
+            if (nivel === '') {
+                alert("Selecione um nivel para começar o jogo")
+                return false
+            } else if (nivel === 'Normal') {
+                dificuldade = 1500;
+            } else if (nivel === 'Dificil') {
+                dificuldade = 1000;
+            } else if (nivel === 'Impossivel') {
+                dificuldade = 750;
+            }
+
+            window.location.href = 'jogo.html?' + dificuldade}
+    </script>
+    
+
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <img src="imagens/game.png">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <select id="selecionador">
+                    <option value="">-- Selecione o nivel --</option>
+                    <option value="Normal">Normal</option>
+                    <option value="Dificil">Dificil</option>
+                    <option value="Impossivel">Impossivel</option>
+                </select>
+
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <button class="InicialPersonalizado" type="button" onclick="iniciarJogo()">Iniciar</button>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
